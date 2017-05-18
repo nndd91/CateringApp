@@ -1,0 +1,10 @@
+Current Menu
+<ul>
+<% @menus.each do |x| %>
+  <li>
+  <%= x.item %>
+  <%= x.description %>
+  <%= x.img_location %>
+  </li>
+<% end %>
+</ul>

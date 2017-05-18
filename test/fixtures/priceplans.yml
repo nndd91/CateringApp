@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  no_of_people: 1
+  no_of_dishes: 1
+  price: 1
+  add_item_cost: 1
+
+two:
+  no_of_people: 1
+  no_of_dishes: 1
+  price: 1
+  add_item_cost: 1

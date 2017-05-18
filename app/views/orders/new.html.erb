@@ -1,0 +1,50 @@
+<%# Select price plan%>
+Price plan
+<% @priceplan.each do |y|%>
+<br>
+  <%= radio_button_tag(:id, y.id) %>
+  <%= y.no_of_people %>
+  <%= y.no_of_dishes %>
+  <%= y.price %>
+  <%= y.add_item_cost %>
+<% end %>
+
+
+
+<%= form_for @order do |f| %>
+Current Menu
+<br>
+  <ul>
+    <% @menus.each do |x| %>
+      <li>
+      <%= check_box_tag(x.itemtag) %>
+      <%= x.item %>
+      <%= x.description %>
+      <%= x.img_location %>
+      </li>
+    <% end %>
+  </ul>
+
+
+<br>
+  <%= f.label :custname %>
+  <%= f.text_field :custname %>
+<br>
+  <%= f.label :contactnumber %>
+  <%= f.text_field :contactnumber %>
+<br>
+  <%= f.label :custaddress %>
+  <%= f.text_field :custaddress %>
+<br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+<br>
+  <%= f.label :deliveryDate%>
+  <%= f.date_field :deliveryDate%>
+<br>
+
+<br>
+  <%= f.submit %>
+  <%= link_to 'Back to index', root_path %>
+
+<% end %>
