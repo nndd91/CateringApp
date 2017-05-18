@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get '/orders', to: 'orders#index'
   get '/orders/new', to: 'orders#new'
-
+  get '/orders/show', to: 'orders#show'
+  post '/orders', to: 'orders#create'
   get '/admin', to: 'admin#index'
   get '/menus', to: 'menus#index'
   get '/menus/new', to: 'menus#new'

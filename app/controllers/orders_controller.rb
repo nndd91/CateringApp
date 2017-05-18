@@ -4,8 +4,9 @@ class OrdersController < ApplicationController
 
   end
 
-  def show #Show order for each user
-
+  # Show order for each user
+  def show
+    @orders = Order.all
   end
   
   
@@ -26,7 +27,7 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:orders).permit(:custname, :contactnumber, :custaddress, :email, :deliveryDate)
+    params.require(:order).permit(:custname, :contactnumber, :custaddress, :email, :deliveryDate)
   end
   
 

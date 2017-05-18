@@ -3,7 +3,7 @@ class CreateOrderTables < ActiveRecord::Migration[5.1]
     create_table :order_tables do |t|
       t.string :custname
       t.string :custaddress
-      t.text :items_select
+      t.text :itemslistid
       t.integer :price_plan
       t.integer :finalprice
       t.integer :no_of_items_sel

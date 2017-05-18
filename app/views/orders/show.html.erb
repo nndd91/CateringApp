@@ -1,0 +1,16 @@
+<br>
+<% @orders.each do |order| %>
+  <br>ID: <%= order.id %>
+  <br>Customer Name: <%= order.custname %>
+  <br>Customer Email: <%= order.email %>
+  <br>Contact Number: <%= order.contactnumber %>
+  <br>Customer's Address: <%= order.custaddress %>
+  <br>Price Plan: <%= order.price_plan %>
+  <br>Delivery Date: <%= order.deliveryDate %>
+  <br>No of Items Selected: <%= order.no_of_items_sel %>
+  <br>Itemlist: <% @itemlist = getItemList(order.id) %>
+  <% (0..@itemlist.length-1).each do |index| %>
+    <br><%= index+1 %>. <%= @itemlist[index] %>
+  <% end %>
+  <br>Final Price: <%= order.finalprice %>
+<% end %>
