@@ -6,6 +6,7 @@ Current Menu
   <ul>
     <% @menus.each do |x| %>
       <li>
+      <%= check_box_tag("test") %>
       <%= x.item %>
       <%= x.description %>
       <%= x.img_location %>
