@@ -1,2 +1,0 @@
-class OrderTable < ApplicationRecord
-end

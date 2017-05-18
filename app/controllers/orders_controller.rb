@@ -10,8 +10,8 @@ class OrdersController < ApplicationController
   
   
   def new 
-    @order = OrderTable.new
-    @menu = Menu.all
+    @order = Order.new
+    @menus = Menu.all
   end
   
 
