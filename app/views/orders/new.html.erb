@@ -1,4 +1,40 @@
 <%# Select price plan%>
 
 Price plan
+<%= form_for @order do |f| %>
+Current Menu
+  <ul>
+    <% @menus.each do |x| %>
+      <li>
+      <%= x.item %>
+      <%= x.description %>
+      <%= x.img_location %>
+      </li>
+    <% end %>
+  </ul>
 
+
+
+  <%= f.label :custname %>
+  <%= f.text_field :custname %>
+
+  <%= f.label :contactnumber %>
+  <%= f.text_field :contactnumber %>
+
+  <%= f.label :custaddress %>
+  <%= f.text_field :custaddress %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :deliveryDate%>
+  <%= f.date_field :deliveryDate%>
+
+
+  <%= f.label :img_location%>
+  <%= f.file_field :img_location%>
+
+  <%= f.submit %>
+  <%= link_to 'Back to index', root_path %>
+
+<% end %>

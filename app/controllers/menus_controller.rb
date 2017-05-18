@@ -11,9 +11,12 @@ class MenusController < ApplicationController
     else
       render :new
     end
-    
   end
 
+  def index
+    @menus = Menu.all
+  end
+  
 
   private
   def menu_params

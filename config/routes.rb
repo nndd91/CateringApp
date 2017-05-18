@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get '/orders', to: 'orders#index'
-
+  get '/orders/new', to: 'orders#new'
+  
   get '/admin', to: 'admin#index'
-
-  get '/menus', to: 'menus#new'
-
+  get '/menus', to: 'menus#index'
+  get '/menus/new', to: 'menus#new'
   post '/menus', to: 'menus#create'
 
 end
