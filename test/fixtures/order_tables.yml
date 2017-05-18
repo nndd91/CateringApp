@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  custname: MyString
+  custaddress: MyString
+  items_select: MyText
+  price_plan: 1
+  finalprice: 1
+  no_of_items_sel: 1
+  datePurchase: 2017-05-18
+  delieryDate: 2017-05-18
+  contactnumber: 1
+  email: MyString
+
+two:
+  custname: MyString
+  custaddress: MyString
+  items_select: MyText
+  price_plan: 1
+  finalprice: 1
+  no_of_items_sel: 1
+  datePurchase: 2017-05-18
+  delieryDate: 2017-05-18
+  contactnumber: 1
+  email: MyString
