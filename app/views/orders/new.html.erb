@@ -1,12 +1,23 @@
 <%# Select price plan%>
 Price plan
+<% @priceplan.each do |y|%>
+<br>
+  <%= radio_button_tag(:id, y.id) %>
+  <%= y.no_of_people %>
+  <%= y.no_of_dishes %>
+  <%= y.price %>
+  <%= y.add_item_cost %>
+<% end %>
+
+
+
 <%= form_for @order do |f| %>
 Current Menu
 <br>
   <ul>
     <% @menus.each do |x| %>
       <li>
-      <%= check_box_tag("test") %>
+      <%= check_box_tag(x.itemtag) %>
       <%= x.item %>
       <%= x.description %>
       <%= x.img_location %>
