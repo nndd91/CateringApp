@@ -1,8 +1,8 @@
 <%# Select price plan%>
-
 Price plan
 <%= form_for @order do |f| %>
 Current Menu
+<br>
   <ul>
     <% @menus.each do |x| %>
       <li>
@@ -14,26 +14,24 @@ Current Menu
   </ul>
 
 
-
+<br>
   <%= f.label :custname %>
   <%= f.text_field :custname %>
-
+<br>
   <%= f.label :contactnumber %>
   <%= f.text_field :contactnumber %>
-
+<br>
   <%= f.label :custaddress %>
   <%= f.text_field :custaddress %>
-
+<br>
   <%= f.label :email %>
   <%= f.text_field :email %>
-
+<br>
   <%= f.label :deliveryDate%>
   <%= f.date_field :deliveryDate%>
+<br>
 
-
-  <%= f.label :img_location%>
-  <%= f.file_field :img_location%>
-
+<br>
   <%= f.submit %>
   <%= link_to 'Back to index', root_path %>
 

@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Menu.create(item: "Chicken Wing", description: "Delicious wings", img_location: "chicken_wing.jpg")
+Menu.create(item: "Burger", description: "Delicious Burger", img_location: "burger.jpg")
+Menu.create(item: "Fries", description: "Delicious Fries", img_location: "fries.jpg")
