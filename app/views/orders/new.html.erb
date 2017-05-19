@@ -20,12 +20,12 @@
 
     <h2>Current Menu</h2>
     <br>
-    <div class="panel panel-default" style="display: flex; justify-content: center; align-items:flex-start; flex-wrap: wrap;"><!-- Start of ui grid-->
+    <div class="panel panel-default" id="menupanel"><!-- Start of ui grid-->
         <!-- Start of ui grid row -->
             
               <% @menus.each do |x| %>
                 <div class="panel panel-default" id="menucard">
-                    <img class="ui image" id="menuimage"><%= x.img_location %></img>
+                    <div id="menuimage"><%= image_tag x.img_location.url %></div>
 
                     <div class="content">
                         <div class="header"><%= x.item %></div>

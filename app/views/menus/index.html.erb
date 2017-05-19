@@ -1,25 +1,24 @@
 Current Menu
-        <% @menus.each do |x| %>
-                        <div class="row">
-                <div class="ui card">
-                    <img class="ui image" src=<%= x.img_location %>>
+<div class="panel panel-default" id="menupanel">
+    <% @menus.each do |x| %>
+    <div class="panel panel-default" id="menucard">
+        
+        <div id="menuimage"><%= image_tag x.img_location.url %></div>
 
-                    <div class="content">
-                        <div class="header"><%= x.item %></div>
-                        <div class="description"><%= x.description %>.
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="ui labeled icon menu">
-                            <div class="ui left floated compact segment">
-                                <div class="ui checked checkbox">
-                                          <%= check_box_tag(x.itemtag) %>
-
-                                    <label>Active</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="content">
+            <div class="header"><%= x.item %>
+            </div>
+            <div class="description"><%= x.description %>.
+            </div>
+        </div>
+        <div class="extra content"><!-- start of extra content -->
+            <div class="ui labeled icon menu">
+                <div class="ui left floated compact segment">
+                    <%= check_box_tag(x.itemtag) %>
+                    <label>Active</label>
                 </div>
             </div>
-          <% end %>
+        </div><!-- end of extra content -->
+    </div>
+    <% end %>
+</div>
