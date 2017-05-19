@@ -1,0 +1,31 @@
+<%= form_for @priceplan do |f| %>
+
+    <div class="ui fluid form">
+        <div class="inline fields">
+            <div class="field">
+                <label for="no_of_people"> <%= f.label :no_of_people %></label>
+                <%= f.text_field :no_of_people %> 
+            </div>
+            <div class="field">
+                <label for="no_of_dishes"><%= f.label :no_of_dishes %></label>
+                <%= f.text_field :no_of_dishes %>
+            </div>
+
+            <div class="field">
+                <label for="price"><%= f.label :price %></label>
+                <%= f.text_field :price %>
+            </div>
+            <div class="field">
+                
+                <%= f.label :add_item_cost %>
+                <%= f.text_field :add_item_cost %>
+        
+            </div>
+            <br/>
+
+        </div>
+
+        <br>
+  <%= f.submit %>
+  <%= link_to 'Back to index', root_path %>
+<% end %>

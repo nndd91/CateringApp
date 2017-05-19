@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   get '/orders/show', to: 'orders#show'
   post '/orders', to: 'orders#create'
   get '/admin', to: 'admin#index'
+  get '/admin/newpriceplan', to: 'admin#newpriceplan', as: 'priceplans'
+  post '/admin/newpriceplan', to: 'admin#create', as: 'priceplans_new'
+  delete 'admin/newpriceplan', to: 'admin#destroy'
   get '/menus', to: 'menus#index'
   get '/menus/new', to: 'menus#new'
   post '/menus', to: 'menus#create'
+  delete '/menus', to: 'menus#destroy'
 
 end

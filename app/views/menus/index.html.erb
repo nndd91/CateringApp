@@ -17,7 +17,9 @@ Current Menu
                     <%= check_box_tag(x.itemtag) %>
                     <label>Active</label>
                 </div>
+                <%= link_to 'Delete', menus_url(id: x.id), method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
+            
         </div><!-- end of extra content -->
     </div>
     <% end %>

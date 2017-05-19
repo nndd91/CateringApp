@@ -7,7 +7,7 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     if @menu.save
-      redirect_to menus_url
+      redirect_to menus_path
     else
       render :new
     end
@@ -15,6 +15,11 @@ class MenusController < ApplicationController
 
   def index
     @menus = Menu.all
+  end
+  
+  def destroy
+    @menu = Menu.find(params[:id]).destroy
+    redirect_to menus_path
   end
   
 

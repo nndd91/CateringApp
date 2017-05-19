@@ -3,4 +3,22 @@
 <br><%= link_to 'Show all Orders', orders_show_path %> 
 <br><%= link_to 'Show Menu', menus_path %>
 <br><%= link_to 'New Food Item', menus_new_path %>
+
+
+        <div class="panel panel-default">
+          <h1>Current Available Price Plan</h1>
+            <div class="panel-body">
+                <% @priceplans.each do |y|%>
+                    <%= y.no_of_people %> Pax | 
+                    <%= y.no_of_dishes %> Dishes @
+                    <%= y.price %> | Each Additional Item: $
+                    <%= y.add_item_cost %>
+                    <%= link_to 'Delete', priceplans_path(id: y.id), method: :delete, data: { confirm: "Are you sure?" } %><br>
+                <% end %>
+            </div> <!-- end of panel body -->
+            
+            <%= link_to 'New Price Plan', priceplans_new_path %>
+        </div><!-- end of panel panel default -->
+
+
 </center>
