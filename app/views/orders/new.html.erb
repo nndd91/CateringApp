@@ -1,50 +1,100 @@
 <%# Select price plan%>
-Price plan
-<% @priceplan.each do |y|%>
+
+
 <br>
-  <%= radio_button_tag(:id, y.id) %>
-  <%= y.no_of_people %>
-  <%= y.no_of_dishes %>
-  <%= y.price %>
-  <%= y.add_item_cost %>
+<div class="ui container">
+    <%= form_for @order do |f| %>
+    <h2>Price plan</h2>
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <% @priceplan.each do |y|%>
+                    <%= radio_button_tag(:id, y.id) %>
+                    <%= y.no_of_people %> Pax | 
+                    <%= y.no_of_dishes %> Dishes @
+                    <%= y.price %> | Each Additional Item: $
+                    <%= y.add_item_cost %><br>
+                <% end %>
+            </div> <!-- end of panel body -->
+        </div><!-- end of panel panel default -->
+
+    <h2>Current Menu</h2>
+    <br>
+    <div class="panel panel-default" style="display: flex; justify-content: center; align-items:flex-start; flex-wrap: wrap;"><!-- Start of ui grid-->
+        <!-- Start of ui grid row -->
+            
+              <% @menus.each do |x| %>
+                <div class="panel panel-default" id="menucard">
+                    <img class="ui image" id="menuimage"><%= x.img_location %></img>
+
+                    <div class="content">
+                        <div class="header"><%= x.item %></div>
+                        <div class="description"><%= x.description %>.
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui labeled icon menu">
+                            <div class="ui left floated compact segment">
+                                
+                                    <%= check_box_tag(x.itemtag) %>
+                                    <label>Active</label>
+                                
+                            </div>
+                        </div>
+                    </div><!-- end of extra content -->
+                </div><!-- end of ui card -->
+            <!-- end of row-->
+             <% end %>
+        <!-- end of ui grid row -->
+    </div><!-- End of ui grid -->
+             
+             <p><p>
+
+
+
+    <div class="ui fluid form"><!-- Start of ui fluid form -->
+        <div class="inline fields">
+            <div class="field">
+                <label for="first_name"> <%= f.label :custname %></label>
+                <%= f.text_field :custname %> 
+            </div>
+            <div class="field">
+                <label for="last_name"><%= f.label :contactnumber %></label>
+                <%= f.text_field :contactnumber %>
+            </div>
+
+            <div class="field">
+                <label for="last_name"><%= f.label :email %></label>
+                <%= f.text_field :email %>
+            </div>
+            <div class="field">
+                
+                      <%= f.label :deliveryDate%>
+                      <%= f.date_field :deliveryDate%>
+                
+            </div>
+            <br/>
+
+        </div> <!-- End of inline fields -->
+
+
+        <div class="field">
+            <label for="address">Customer Address</label>
+            <%= f.text_field :custaddress %>
+        </div>
+
+        <br>
+  
+        <div class="ui left action input">
+            <button class="ui labeled icon button">
+                <i class="cart icon"></i>
+                <%= f.submit %>
+            </button>
+            <input type="text" value="$70.00" readonly>
+        </div>
+    </div><!-- End of ui form -->
+
+
 <% end %>
 
-
-
-<%= form_for @order do |f| %>
-Current Menu
-<br>
-  <ul>
-    <% @menus.each do |x| %>
-      <li>
-      <%= check_box_tag(x.itemtag) %>
-      <%= x.item %>
-      <%= x.description %>
-      <%= x.img_location %>
-      </li>
-    <% end %>
-  </ul>
-
-
-<br>
-  <%= f.label :custname %>
-  <%= f.text_field :custname %>
-<br>
-  <%= f.label :contactnumber %>
-  <%= f.text_field :contactnumber %>
-<br>
-  <%= f.label :custaddress %>
-  <%= f.text_field :custaddress %>
-<br>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-<br>
-  <%= f.label :deliveryDate%>
-  <%= f.date_field :deliveryDate%>
-<br>
-
-<br>
-  <%= f.submit %>
-  <%= link_to 'Back to index', root_path %>
-
-<% end %>
+</div><!-- end of ui containter -->

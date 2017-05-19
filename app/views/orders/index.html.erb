@@ -1,6 +1,7 @@
-<center>
-This is the orders index page
-<br><%= link_to "New Order!", orders_new_path %>
-<br><%= link_to "Show Order!", orders_show_path %>
-<br><%= link_to 'Back to Index!', root_path %>
-<br></center>
+<div class="ui container">
+<h1>This is the orders index page</h1>
+
+    <button class="ui basic red button"><%= link_to "New Order!", orders_new_path %> </button>
+    <button class="ui basic red button"><%= link_to "Show Order!", orders_show_path %> </button>
+     <button class="ui basic red button"><%= link_to 'Back to Index!', root_path %> </button>
+</div>

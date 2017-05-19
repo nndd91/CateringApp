@@ -1,19 +1,35 @@
 <%= form_for @menu do |f| %>
-<br>
-  <%= f.label :item%>
-  <%= f.text_field :item%>
-<br>
-  <%= f.label :itemtag%>
-  <%= f.text_field :itemtag%>
-<br>
-  <%= f.label :description%>
-  <%= f.text_field :description%>
-<br>
 
-  <%= f.label :img_location%>
-  <%= f.file_field :img_location%>
-<br>
+    <div class="ui fluid form">
+        <div class="inline fields">
+            <div class="field">
+                <label for="items"> <%= f.label :item %></label>
+                <%= f.text_field :item %> 
+            </div>
+            <div class="field">
+                <label for="last_name"><%= f.label :itemtag %></label>
+                <%= f.text_field :itemtag %>
+            </div>
+
+            <div class="field">
+                <label for="last_name"><%= f.label :description %></label>
+                <%= f.text_field :description %>
+            </div>
+            <div class="field">
+                
+                      <%= f.label :img_location%>
+                      <%= f.file_field :img_location%>
+                
+            </div>
+            <br/>
+
+        </div>
+
+        <br>
   <%= f.submit %>
   <%= link_to 'Back to index', root_path %>
+    </div>
+
 
 <% end %>
+

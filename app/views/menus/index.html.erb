@@ -1,10 +1,25 @@
 Current Menu
-<ul>
-<% @menus.each do |x| %>
-  <li>
-  <%= x.item %>
-  <%= x.description %>
-  <%= x.img_location %>
-  </li>
-<% end %>
-</ul>
+        <% @menus.each do |x| %>
+                        <div class="row">
+                <div class="ui card">
+                    <img class="ui image" src=<%= x.img_location %>>
+
+                    <div class="content">
+                        <div class="header"><%= x.item %></div>
+                        <div class="description"><%= x.description %>.
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui labeled icon menu">
+                            <div class="ui left floated compact segment">
+                                <div class="ui checked checkbox">
+                                          <%= check_box_tag(x.itemtag) %>
+
+                                    <label>Active</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <% end %>
